@@ -2,7 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: AppProject
 metadata:
   name: myapp-project
-  namespace: argocd_test_app
+  namespace: argocd
 spec:
   description: Project for myapp HTML application
 
@@ -14,6 +14,8 @@ spec:
   destinations:
     - namespace: argocd_test_app
       server: https://kubernetes.default.svc
+      syncOptions:
+        - CreateNamespace=true
 
   # Allowed namespace-level resources
   namespaceResourceWhitelist:

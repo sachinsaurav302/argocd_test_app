@@ -2,7 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: root-app
-  namespace: argocd_test_app
+  namespace: argocd
 spec:
   project: default
 
@@ -21,4 +21,3 @@ spec:
       selfHeal: true
     syncOptions:
       - CreateNamespace=true
-      

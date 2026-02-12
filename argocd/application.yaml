@@ -2,7 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: myapp
-  namespace: argocd_test_app        # Argo CD runs in this namespace
+  namespace: argocd        # Argo CD runs in this namespace
 spec:
   project: myapp-project
 
