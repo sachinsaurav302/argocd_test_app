@@ -1,0 +1,21 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: root-app
+  namespace: argocd_test_app
+spec:
+  project: default
+
+  source:
+    repoURL: https://github.com/sachinsaurav302/argocd_test_app.git
+    targetRevision: main
+    path: argocd              # folder containing child applications
+
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: argocd_test_app        # namespace to deploy the app
+
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true

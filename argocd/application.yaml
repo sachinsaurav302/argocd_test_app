@@ -1,0 +1,23 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: myapp
+  namespace: argocd_test_app        # Argo CD runs in this namespace
+spec:
+  project: myapp-project
+
+  source:
+    repoURL: https://github.com/sachinsaurav302/argocd_test_app.git
+    targetRevision: main
+    path: k8s        # folder where k8s yamls exist
+
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: argocd_test_app        # namespace to deploy the app
+
+  syncPolicy:
+    automated:
+      prune: true          # delete resources removed from Git
+      selfHeal: true       # revert manual kubectl changes
+    syncOptions:
+      - CreateNamespace=true
