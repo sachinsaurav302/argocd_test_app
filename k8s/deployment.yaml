@@ -1,17 +1,17 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: html-app
+  name: html-app2
   # namespace: default
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: html-app
+      app: html-app2
   template:
     metadata:
       labels:
-        app: html-app
+        app: html-app2
     spec:
       containers:
       - name: nginx
