@@ -6,7 +6,7 @@ metadata:
 spec:
   description: Project for myapp HTML application
 
-  # Only this repo is allowed
+  # Allowed Git repositories
   sourceRepos:
     - https://github.com/sachinsaurav302/argocd_test_app.git
 
@@ -14,10 +14,13 @@ spec:
   destinations:
     - namespace: argocd_test_app
       server: https://kubernetes.default.svc
-      syncOptions:
-        - CreateNamespace=true
 
-  # Allowed namespace-level resources
+  # ✅ CLUSTER-SCOPED resources (VERY IMPORTANT)
+  clusterResourceWhitelist:
+    - group: ""
+      kind: Namespace
+
+  # ✅ NAMESPACE-SCOPED resources
   namespaceResourceWhitelist:
     - group: apps
       kind: Deployment
