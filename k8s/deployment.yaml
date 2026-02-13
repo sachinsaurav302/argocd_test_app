@@ -24,4 +24,4 @@ spec:
       volumes:
       - name: html-volume
         configMap:
-          name: html-config
+          name: html-config2
