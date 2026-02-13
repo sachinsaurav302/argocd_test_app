@@ -30,3 +30,4 @@ spec:
       kind: ConfigMap
     - group: ""
       kind: Secret
+
