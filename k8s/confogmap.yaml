@@ -2,7 +2,7 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: html-config2
-  # namespace: default
+  namespace: argocd_test_app
 data:
   index.html: |
     <!DOCTYPE html>

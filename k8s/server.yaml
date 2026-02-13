@@ -2,7 +2,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: html-app-service2
-  # namespace: default
+  namespace: argocd_test_app
 spec:
   type: NodePort
   selector:

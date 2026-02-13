@@ -12,10 +12,10 @@ spec:
 
   # Allowed deployment destinations
   destinations:
-    - namespace: argocd
+    - namespace: argocd_test_app
       server: https://kubernetes.default.svc
-      # syncOptions:
-      #   - CreateNamespace=true
+      syncOptions:
+        - CreateNamespace=true
 
   # Allowed namespace-level resources
   namespaceResourceWhitelist:

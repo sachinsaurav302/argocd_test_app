@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: html-app2
-  # namespace: default
+  namespace: argocd_test_app
 spec:
   replicas: 5
   selector:

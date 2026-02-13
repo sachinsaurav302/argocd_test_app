@@ -13,11 +13,11 @@ spec:
 
   destination:
     server: https://kubernetes.default.svc
-    namespace: argocd        # namespace to deploy the app
+    namespace: argocd_test_app        # namespace to deploy the app
 
   syncPolicy:
     automated:
       prune: true          # delete resources removed from Git
       selfHeal: true       # revert manual kubectl changes
-    # syncOptions:
-    #   - CreateNamespace=true
+    syncOptions:
+      - CreateNamespace=true
