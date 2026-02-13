@@ -13,7 +13,7 @@ spec:
 
   destination:
     server: https://kubernetes.default.svc
-    namespace: argocd_test_app        # namespace to deploy the app
+    namespace: argocd-test-app        # namespace to deploy the app
 
   syncPolicy:
     automated:

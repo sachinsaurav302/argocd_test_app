@@ -4,23 +4,17 @@ metadata:
   name: myapp-project
   namespace: argocd
 spec:
-  description: Project for myapp HTML application
-
-  # Allowed Git repositories
   sourceRepos:
     - https://github.com/sachinsaurav302/argocd_test_app.git
 
-  # Allowed deployment destinations
   destinations:
-    - namespace: argocd_test_app
+    - namespace: argocd-test-app
       server: https://kubernetes.default.svc
 
-  # ✅ CLUSTER-SCOPED resources (VERY IMPORTANT)
   clusterResourceWhitelist:
     - group: ""
       kind: Namespace
 
-  # ✅ NAMESPACE-SCOPED resources
   namespaceResourceWhitelist:
     - group: apps
       kind: Deployment
@@ -30,4 +24,3 @@ spec:
       kind: ConfigMap
     - group: ""
       kind: Secret
-
